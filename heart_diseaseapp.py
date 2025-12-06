@@ -6,7 +6,7 @@ import joblib
 st.title("Heart Disease Prediction App")
 
 # Load model
-model = joblib.load("heart_model.pkl")
+model = joblib.load("model.pkl")
 
 # -------- INPUT FIELDS --------
 age = st.number_input("Age", 1, 120, 50)
