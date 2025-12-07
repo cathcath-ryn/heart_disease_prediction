@@ -29,7 +29,7 @@ exang = int(exang[-2])
 oldpeak = st.number_input("Oldpeak", 0.0, 7.0, 1.0)
 slope = st.selectbox("ST Slope", ["Upsloping (0)", "Flat (1)", "Downsloping (2)"])
 slope = int(slope[-2])
-ca = st.number_input("Number of Major Vessels (0–4)", 0, 4, 0)
+ca = st.number_input("Number of Visible Major Vessels (0–4)", 0, 4, 0)
 thal = st.selectbox("Thalassemia", ["Normal (1)", "Fixed defect (2)", "Reversible defect (3)"])
 thal = int(thal[-2])
 
