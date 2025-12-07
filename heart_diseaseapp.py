@@ -11,7 +11,7 @@ sex = st.selectbox("Sex", ["Female", "Male"])
 sex = 1 if sex == "Male" else 0
 cp = st.selectbox(
     "Chest Pain Type",
-    ["Typical Angina (0)", "Atypical Angina (1)", "Non-anginal Pain (2)", "Asymptomatic (3)"]
+    {"Typical Angina": 0, "Atypical": 1, "Non-anginal": 2, "Asymptomatic": 3}
 )
 trestbps = st.number_input("Resting Blood Pressure", 80, 200, 120)
 chol = st.number_input("Cholesterol", 100, 600, 200)
