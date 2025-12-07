@@ -4,7 +4,7 @@ import numpy as np
 import joblib
 import os
 
-logo_path = "images/parami.jpg"
+logo_path = "/images/parami.jpg"
 
 st.sidebar.markdown("Student Info")
 
