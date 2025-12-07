@@ -22,29 +22,52 @@ model = joblib.load("model.pkl")
 age = st.number_input("Age", 1, 120, 50)
 sex = st.radio("Sex", ["Female", "Male"])
 sex = 1 if sex == "Male" else 0
-cp = st.selectbox(
-    "Chest Pain Type",
-    ["Typical Angina", "Atypical Angina", "Non-anginal Pain", "Asymptomatic"]
-)
-cp = int(cp[-2])
-trestbps = st.number_input("Resting Blood Pressure", 80, 200, 120)
-chol = st.number_input("Cholesterol", 100, 600, 200)
-fbs = st.selectbox("Fasting Blood Sugar > 120 mg/dl", ["No", "Yes"])
-fbs = int(fbs[-2])
-restecg = st.selectbox(
-    "Resting ECG Results",
-    ["Normal", "ST-T wave abnormality", "Left ventricular hypertrophy"]
-)
-restecg = int(restecg[-2])
+cp_options = {
+    "Typical Angina": 0,
+    "Atypical Angina": 1,
+    "Non-anginal Pain": 2,
+    "Asymptomatic": 3
+}
+cp_label = st.radio("Chest Pain Type", list(cp_options.keys()))
+cp = cp_options[cp_label]
+
+trestbps = st.number_input("Resting Blood Pressure (in mmHg)", 80, 200, 120)
+
+chol = st.number_input("Cholesterol (mg/dl)", 100, 600, 200)
+
+fbs_options = {"No": 0, "Yes": 1}
+fbs_label = st.radio("Fasting Blood Sugar > 120 mg/dl", list(fbs_options.keys()))
+fbs = fbs_options[fbs_label]
+
+restecg_options = {
+    "Normal": 0,
+    "ST-T wave abnormality": 1,
+    "Left ventricular hypertrophy": 2
+}
+restecg_label = st.radio("Resting ECG Results", list(restecg_options.keys()))
+restecg = restecg_options[restecg_label]
+
 thalach = st.number_input("Max Heart Rate Achieved", 60, 220, 150)
-exang = st.selectbox("Exercise Induced Angina", ["No", "Yes"])
-exang = int(exang[-2])
+
+exang_options = {"No": 0, "Yes": 1}
+exang_label = st.radio("Exercise Induced Angina", list(exang_options.keys()))
+exang = exang_options[exang_label]
+
 oldpeak = st.number_input("Oldpeak", 0.0, 7.0, 1.0)
-slope = st.selectbox("ST Slope", ["Upsloping", "Flat", "Downsloping"])
-slope = int(slope[-2])
+
+slope_options = {"Upsloping": 0, "Flat": 1, "Downsloping": 2}
+slope_label = st.radio("ST Slope", list(slope_options.keys()))
+slope = slope_options[slope_label]
+
 ca = st.slider("Number of Visible Major Vessels", 0, 3, 0)
-thal = st.selectbox("Thalassemia", ["Normal", "Fixed defect", "Reversible defect"])
-thal = int(thal[-2])
+
+thal_options = {
+    "Normal": 1,
+    "Fixed defect": 2,
+    "Reversible defect": 3
+}
+thal_label = st.radio("Thalassemia", list(thal_options.keys()))
+thal = thal_options[thal_label]
 
 if st.button("Predict"):
     input_data = np.array([[age, sex, cp, trestbps, chol, fbs, restecg,
