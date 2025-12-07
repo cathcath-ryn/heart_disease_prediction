@@ -2,7 +2,20 @@ import streamlit as st
 import pandas as pd
 import numpy as np
 import joblib
+import os
 
+logo_path = "images/parami.jpg"
+
+st.sidebar.markdown("Student Info")
+
+if os.path.exists(logo_path):
+    st.sidebar.image(logo_path, width=150)
+
+
+st.sidebar.markdown("Name:**Ei Phyu Sin Win")
+st.sidebar.markdown("**Student ID: PIUS20230033")
+st.sidebar.markdown("Class: 2027")
+st.sidebar.markdown("Intro to Machine Learning")
 st.title("Heart Disease Prediction App")
 model = joblib.load("model.pkl")
 
