@@ -20,7 +20,7 @@ st.title("Heart Disease Prediction App")
 model = joblib.load("model.pkl")
 
 age = st.number_input("Age", 1, 120, 50)
-sex = st.selectbox("Sex", ["Female", "Male"])
+sex = st.radio("Sex", ["Female", "Male"])
 sex = 1 if sex == "Male" else 0
 cp = st.selectbox(
     "Chest Pain Type",
