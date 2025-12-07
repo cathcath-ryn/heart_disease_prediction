@@ -22,7 +22,7 @@ restecg = st.selectbox(
 )
 thalach = st.number_input("Max Heart Rate Achieved", 60, 220, 150)
 exang = st.selectbox("Exercise Induced Angina", ["No (0)", "Yes (1)"])
-oldpeak = st.number_input("Oldpeak", 0.0, 10.0, 1.0)
+oldpeak = st.number_input("Oldpeak", 0.0, 7.0, 1.0)
 slope = st.selectbox("ST Slope", ["Upsloping (0)", "Flat (1)", "Downsloping (2)"])
 ca = st.number_input("Number of Major Vessels (0–4)", 0, 4, 0)
 thal = st.selectbox("Thalassemia", ["Normal (1)", "Fixed defect (2)", "Reversible defect (3)"])
