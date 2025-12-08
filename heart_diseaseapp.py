@@ -16,7 +16,7 @@ st.sidebar.markdown("Name: **Ei Phyu Sin Win**")
 st.sidebar.markdown("**Student ID: PIUS20230033**")
 st.sidebar.markdown("Class: 2027")
 st.sidebar.markdown("Intro to Machine Learning")
-st.title("Heart Disease Prediction App")
+st.title("Heart Disease Prediction")
 model = joblib.load("model.pkl")
 
 age = st.number_input("Age", 1, 120, 50)
