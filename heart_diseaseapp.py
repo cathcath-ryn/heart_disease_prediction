@@ -33,7 +33,7 @@ cp = cp_options[cp_label]
 
 trestbps = st.number_input("Resting Blood Pressure (in mmHg)", 80, 200, 120)
 
-chol = st.number_input("Cholesterol (mg/dl)", 100, 600, 200)
+chol = st.number_input("Cholesterol (mg/dl)", 100, 1000, 200)
 
 fbs_options = {"No": 0, "Yes": 1}
 fbs_label = st.radio("Fasting Blood Sugar > 120 mg/dl", list(fbs_options.keys()))
@@ -47,7 +47,7 @@ restecg_options = {
 restecg_label = st.radio("Resting ECG Results", list(restecg_options.keys()))
 restecg = restecg_options[restecg_label]
 
-thalach = st.number_input("Max Heart Rate Achieved", 60, 220, 150)
+thalach = st.number_input("Max Heart Rate Achieved", 60, 600, 150)
 
 exang_options = {"No": 0, "Yes": 1}
 exang_label = st.radio("Exercise Induced Angina", list(exang_options.keys()))
